@@ -1,1 +1,24 @@
-Single-database configuration for Flask.
+## Testing
+
+Todo funciona bien, pero hay un detalle con Codespaces:
+
+Insomnia/Postman pueden dar error 404 en los POST y DELETE cuando usas la URL publica. Me parece que no es un problema del codigo sino del codespace. 
+
+La solución es probar desde la terminal:
+
+# Ver datos
+curl http://localhost:3000/users
+curl http://localhost:3000/planets
+curl http://localhost:3000/people
+curl http://localhost:3000/users/favorites
+
+# Añadir favoritos
+curl -X POST http://localhost:3000/favorite/planet/1
+curl -X POST http://localhost:3000/favorite/people/1
+
+# Eliminar favoritos
+curl -X DELETE http://localhost:3000/favorite/planet/1
+curl -X DELETE http://localhost:3000/favorite/people/1
+
+
+
